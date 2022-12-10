@@ -18,21 +18,9 @@ export default {
 
     javascript: "JavaScript",
     htmlcss: "HTML/CSS",
-    actionscript: "ActionScript",
     php: "PHP",
-    cs: "C#",
-    python: "Python",
-    java: "Java",
-    ruby: "Ruby",
-    bash: "Bash",
-
-    linux: "Linux (system)",
-    vms: "Virtualization",
-    cloud: "Cloud Computing",
-    automation: "Automation",
-    adobe: "Adobe CC",
-    sketch: "Sketch",
-    figma: "Figma",
+    react: "React",
+    reactnative: "React Native",
   },
 
   name: "Reza Babaei",
@@ -60,6 +48,10 @@ export default {
       href: "https://www.linkedin.com/in/rezababaei/",
       text: "linkedin.com/in/rezababaei",
     },
+    {
+      href: "https://github.com/ramyareye",
+      text: "github.com/ramyareye",
+    },
   ],
 
   languages: [
@@ -75,13 +67,15 @@ export default {
     },
   ],
 
-  about: `I'm a senior frontend developer, a team leader and a tech advisor in my own field.
+  about: `I am Reza, a senior _frontend developer_, an open-source enthusiast, and a tech advisor.
 
-I've started as a _flash developer_, extended to _Javascript since IE7_. I'm UX oriented and like to keep technology as minimalistic as possible. Over the years I've also worked with many server-side languages and learnt to grow from them. For me, diversity brings richness.
+  I started my career as a _PHP developer_, later on I learned _Javascript_ when _jQuery_ and _Mootools_ where at the height of their popularity. 
 
-At work, _my first motivation is dealing with the impossible_. Technical challenges, innovation, unbelievable concepts from paper to production. I aim at those projects with care, and always try to _think out of the box_ in order to make them alive.
+  I've also worked with many _server-side_ languages and have a good understanding of all technologies, which gives me a versatile and unbiased point of view. 
 
-**I'm always looking for the unknown thing that will keep me awake late at night, for the need to master it. That's what taught me so much so far, that's what will keep me up to date in 10 years.**`,
+  I'm _solution-oriented_ and value reliability and speed above everything else. This means I am committed to deliver according to the project _timeline_ without any compromises in _code quality_.
+
+  As a frontend developer I've focused on _web_ and _mobile_, but still have an interest in _Backend_ and _DevOps_, and try to grow my skills one step at a time and expand my knowledge base.`,
 
   experiences: [
     {
@@ -104,6 +98,7 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
 
       summary: `I'm in charge of the web sdk of "Amity Social Cloud" product, as well as a library of React components which pair with it and 3 websites to help managing our product line. For this I'm actively coding and also overseeing a growing team of remote web engineers. On the side I'm also proactively helping im designing new features (from user requirement to software architecture), and also improving our server side and platform architectures to keep up with the scale relative to our growth.`,
     },
+
     {
       title: "Senior Frontend Engineer",
       company: "LINE",
@@ -114,6 +109,26 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
 
       summary: `At LINE, I've started, defined and implemented a production ready Design System on my own and nurtured it until it finally took off company wide ; it is now spread all around and the whole group is taking steps towards it. While doing it, I've been part of the developer's platform refactoring project, involving in taking over legacy code, analyzing it and building a new version from scratch in Vue.js.`,
     },
+    {
+      title: "Web/Mobile Engineer",
+      company: "Amity",
+      website: "https://amity.co/",
+      from: new Date("2021-07-01"),
+      to: new Date("2022-10-15"),
+      location: "Bangkok, Thailand",
+
+      summary:
+        "Amity Social Cloud supercharges platforms with social features — from Feeds and Chat to Stories and Live Streaming. Building online communities, drive social engagement, create positive experiences, and grow revenues.",
+      summary1: "In charge of Amity Typescript SDK",
+      summary2: "Code, discuss and review teamates PRs",
+      summary3: "Doing different POCs for Typescript SDK",
+      summary4:
+        "Working on fundamental features like Caching, Reactivity and Realtime Events",
+      summary5: "Doing interviews and helping new team members onboarding",
+      summary6:
+        "Create and maintain Amity Social Cloud React Native Sample App",
+    },
+
     {
       title: "Tech Lead, UX Dpt",
       company: "Technicolor",
@@ -127,6 +142,26 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
       highlight: `Our multi-device, web-based content-streaming app prototype with multi-screen, AI powered personnalized recommendations. I had to code it from scratch, using React as a base, and made it to the CES in 2016.`,
     },
     {
+      title: "Full Stack developer",
+      company: "Upera",
+      website: "https://upera.co/",
+      from: new Date("2015-01-01"),
+      to: new Date("2021-06-28"),
+      location: "Tehran, Iran",
+
+      summary:
+        "Upera is a Video-On-Demand and video affiliation solution for local producers in Iran. As a team of 4 people We had a mission to build our interfaces for Web, Mobile and TV.",
+
+      highlight: "Most notable projects in Upera included:",
+      highlight2: "Creating the website using Vue and Nuxt",
+      highlight3: "Managing the production of TV application using Java",
+      highlight4:
+        "Mobile application development using React Native, TypeScript, and experimented with implementation of ReactNative Reanimated",
+      highlight5:
+        "Creating a React dashboard based on TypeScript, TailwindCSS, and React Query",
+    },
+
+    {
       title: "Frontend Lead Developer",
       company: "KRDS",
       website: "https://krds.com/",
@@ -138,6 +173,28 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
 
       highlight: `Induction plan for javascript developers made for indian people : I had to sum up my own experience and organize it in lessons to teach people despite cultural and skill differences.`,
     },
+    {
+      title: "Senior Project Manager",
+      company: "Peste",
+      website: "https://peste.dev/",
+      from: new Date("2020-04-01"),
+      to: new Date("2021-03-01"),
+      location: "Amsterdam, Netherlands (Remote)",
+
+      summary:
+        "Peste is a development agency that helps out businesses with their outsourced web applications. As the Full-stack developer, my core activities included:",
+
+      highlight:
+        "Building stable and maintainable codebases using React, Next and Nest.",
+      highlight2:
+        "Contributing with backend team, designing database and structuring infrastructure",
+      highlight3:
+        "Developing front-end for 5+ websites and web apps, using React.js, Next.js, Redux, and Apollo.",
+      highlight4:
+        "Using skills in debugging to check code, improve code and enhance the functionality and user experience of web applications",
+      highlight5: "Creating custom React.js components and hooks.",
+    },
+
     {
       title: "Creative Developer",
       company: "RAPP",
@@ -151,6 +208,20 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
       highlight: `We were pushing boundaries of JS at that time, coding whatever designers wanted like 'multicolor web writable fonts' or 'video player with chapter and rich content overlayed'. A though time, but a very good time.`,
     },
     {
+      title: "Web, Mobile, & Wordpress developer",
+      company: "Self-Employed",
+      website: "https://rappfrance.com/",
+      from: new Date("2012-03-01"),
+      location: "Tehran, Iran",
+
+      summary:
+        "As I started my career I was and still am more interested in individual and short-term projects. My main goal is to offer help and consultation to small and medium-sized businesses to start and maintain their digital presence.",
+
+      highlight:
+        "We were pushing boundaries of JS at that time, coding whatever designers wanted like 'multicolor web writable fonts' or 'video player with chapter and rich content overlayed'. A though time, but a very good time.",
+    },
+
+    {
       title: "AS3 Developer",
       company: "Big Youth",
       website: "https://bigyouth.fr/",
@@ -163,23 +234,48 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
       highlight: `[The Bic wall](https://thefwa.com/cases/the-bic-wall): the project is a huge realtime collaborative whiteboard. I had to do the R&D for the realtime server of the project. We had to code "from scratch udp/tcp servers" in many languages including C, java, python, nodejs and AS3 and test many existing solutions.`,
     },
     {
+      title: "Frontend Web Developer",
+      company: "SoftMax",
+      website: "https://soft-max.com/",
+      from: new Date("2013-08-01"),
+      to: new Date("2014-02-01"),
+      location: "Erbil, Iraq",
+
+      summary:
+        "SoftMax is a leading Information Technology solutions provider, Business Management, and Training Services. I was taking care of the UI for some services, building new designs and researching about upcoming techs.",
+
+      highlight:
+        '[The Bic wall](https://thefwa.com/cases/the-bic-wall): the project is a huge realtime collaborative whiteboard. I had to do the R&D for the realtime server of the project. We had to code "from scratch udp/tcp servers" in many languages including C, java, python, nodejs and AS3 and test many existing solutions.',
+    },
+
+    {
       title: "Junior UX Designer",
       company: "Axance",
       website: "https://axance.fr/",
       from: new Date("2007-08-01"),
       to: new Date("2009-09-01"),
       location: "Paris, France",
-
-      summary: `I'm working along with a project manager in user centric design refactorings. We design personas, usecases, sitemaps, wireframes, and user tests. I'm also developing prototypes for A/B user tests.`,
+      summary:
+        "I'm working along with a project manager in user centric design refactorings. We design personas, usecases, sitemaps, wireframes, and user tests. I'm also developing prototypes for A/B user tests.",
 
       // highlight: `We had to design user-testing for NFC payment as it was just the beginning of it. In partnership with many telecom operators and banks, we helped them designing gestures and processes for the NFC contact-less payments. I had fun designing fake contact-less interactions with a flash-lite enabled nokia N90 phone and some computers.`,
+    },
+    {
+      title: "Lead Engineer",
+      company: "Varzesh3",
+      website: "https://varzesh3.com/",
+      from: new Date("2012-08-01"),
+      to: new Date("2013-02-2013"),
+      location: "Tehran, Iran",
+      summary:
+        'Varzesh3 is the top Iranian sports news agency. At the time I had the responsibility to design and manage the "national online games tournament" platform, so that users can register and take part in the tournament.',
     },
   ],
 
   skillsets: {
     human: {
-      availability: 0.625,
-      technicity: 0.875,
+      availability: 0.8,
+      technicity: 0.75,
       anticipation: 0.75,
       reactivity: 1,
     },
@@ -188,24 +284,15 @@ At work, _my first motivation is dealing with the impossible_. Technical challen
       typescript: 1,
       javascript: 1,
       htmlcss: 0.875,
-      actionscript: 1,
       php: 0.75,
-      cs: 0.625,
-      python: 0.5,
-      java: 0.625,
-      ruby: 0.375,
-      bash: 0.75,
+      react: 1,
+      reactnative: 0.875,
     },
 
     machine: {
       linux: 0.75,
       docker: 0.5,
-      vms: 0.875,
       cloud: 0.75,
-      automation: 0.75,
-      adobe: 0.75,
-      sketch: 0.5,
-      figma: 0.75,
-    },
+      aws: 0.75,
   },
 };

@@ -1,14 +1,17 @@
 <template>
   <header>
     <hgroup>
-      <h1>{{ $t('name') }} <y-logo /></h1>
+      <h1>{{ $t("name") }}</h1>
       <h2>{{ baseline }}</h2>
     </hgroup>
 
     <ul>
       <i18n tag="li" path="situation">
-        {{ new Date().getFullYear() - new Date(parseInt($t('birth'))).getFullYear() }}
-        <a href="location.href">{{ $t('location.city') }}</a>
+        {{
+          new Date().getFullYear() -
+            new Date(parseInt($t("birth"))).getFullYear()
+        }}
+        <a href="location.href">{{ $t("location.city") }}</a>
       </i18n>
 
       <li :key="i" v-for="(item, i) in $t('contact')">
@@ -19,18 +22,13 @@
 </template>
 
 <script>
-import YLogo from '@/components/Logo'
-
 export default {
-  components: { YLogo },
-
   computed: {
     baseline() {
-      return this.$route.query.job
-        || this.$t('job')
+      return this.$route.query.job || this.$t("job");
     },
   },
-}
+};
 </script>
 
 <style scoped>
@@ -55,11 +53,11 @@ header:hover .logo {
 }
 
 header ul {
-  margin: 0 calc(1em / .8) 0 0;
+  margin: 0 calc(1em / 0.8) 0 0;
   padding: 0;
   list-style: none;
   color: var(--emphasis);
-  font-size: .8em;
+  font-size: 0.8em;
   font-family: sans-serif;
   line-height: 1.6;
 }
@@ -70,11 +68,11 @@ header a {
 }
 
 header h1 {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 header h2 {
-  font-family: 'Arapey', serif;
+  font-family: "Arapey", serif;
   font-weight: normal;
 }
 
