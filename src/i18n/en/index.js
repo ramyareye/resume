@@ -15,16 +15,23 @@ export default {
     technicity: "Technicity",
     anticipation: "Anticipation",
     reactivity: "Reactivity",
+    communication: "Communication",
 
+    typescript: "Typescript",
     javascript: "JavaScript",
     htmlcss: "HTML/CSS",
     php: "PHP",
     react: "React",
     reactnative: "React Native",
+
+    linux: "Linux",
+    docker: "Docker",
+    cloud: "Cloud",
+    aws: "AWS",
   },
 
   name: "Reza Babaei",
-  job: "Senior Frontend Engineer",
+  job: "Mid Senior Frontend Engineer",
 
   birth: "701228527000",
 
@@ -67,7 +74,7 @@ export default {
     },
   ],
 
-  about: `I am Reza, a senior _frontend developer_, an open-source enthusiast, and a tech advisor.
+  about: `I am Reza, a _frontend developer_, an open-source enthusiast, and a tech advisor.
 
   I started my career as a _PHP developer_, later on I learned _Javascript_ when _jQuery_ and _Mootools_ where at the height of their popularity. 
 
@@ -78,6 +85,18 @@ export default {
   As a frontend developer I've focused on _web_ and _mobile_, but still have an interest in _Backend_ and _DevOps_, and try to grow my skills one step at a time and expand my knowledge base.`,
 
   experiences: [
+    {
+      title: "React Native Engineer",
+      company: "Scratchfirst (Wonderfruit)",
+      website: "https://wonderfruit.co/",
+      from: new Date("2022-11-01"),
+      to: null,
+      location: "Bangkok, Thailand",
+
+      summary: `I've joined the team of principal engineers which daily job is to support the feature team and provide insights on technical solutions whenever needed. My specialty in this team is about software and cloud architecturing, best practices and techniques to support the growth of our platform at scale, as well as technical documentation through the initiative of modeling our platform with the C4 model.`,
+      summary: `I've joined the team of principal engineers which daily job is to support the feature team and provide insights on technical solutions whenever needed. My specialty in this team is about software and cloud architecturing, best practices and techniques to support the growth of our platform at scale, as well as technical documentation through the initiative of modeling our platform with the C4 model.`,
+    },
+
     {
       title: "Solution Architect",
       company: "Taskworld",
@@ -278,6 +297,7 @@ export default {
       technicity: 0.75,
       anticipation: 0.75,
       reactivity: 1,
+      communication: 1,
     },
 
     languages: {
@@ -291,8 +311,9 @@ export default {
 
     machine: {
       linux: 0.75,
-      docker: 0.5,
+      docker: 0.75,
       cloud: 0.75,
       aws: 0.75,
+    },
   },
 };
