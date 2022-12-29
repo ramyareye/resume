@@ -76,7 +76,7 @@ export default {
 
   about: `I am Reza, a _frontend developer_, an open-source enthusiast, and a tech advisor.
 
-  I started my career as a _PHP developer_, later on I learned _Javascript_ when _jQuery_ and _Mootools_ where at the height of their popularity. 
+  I started my career as a _PHP developer_, later on I learned _Javascript_ when _jQuery_ and _Mootools_ were at the height of their popularity. 
 
   I've also worked with many _server-side_ languages and have a good understanding of all technologies, which gives me a versatile and unbiased point of view. 
 
