@@ -1,43 +1,53 @@
 ---
-import { t } from '~/i18n/labels'
+import { t } from "~/i18n/labels";
 
-import Section from '~/components/Section.astro'
+import Section from "~/components/Section.astro";
 
-const birth = new Date('1984-10-14')
+const birth = new Date("1992-03-22");
 
 const location = {
-  city: 'Bangkok, Thailand',
-  href: 'https://maps.app.goo.gl/FefycsDeMVdyAu5x6',
-}
+  city: "Bangkok, Thailand",
+  href: "https://maps.app.goo.gl/FefycsDeMVdyAu5x6",
+};
 
 const contact = [
   {
-    href: 'tel:+660957321060',
-    text: '+66 957 321 060',
+    href: "tel:+66835299139",
+    text: "+66 83 529 91339",
   },
   {
-    href: 'mailto:julien.barbay+resume@gmail.com',
-    text: 'julien.barbay@gmail.com',
+    href: "mailto:ramyariran@gmail.com",
+    text: "ramyariran@gmail.com",
   },
   {
-    href: 'https://www.linkedin.com/in/barbayjulien/',
-    text: 'in.com/barbay.julien',
+    href: "https://www.linkedin.com/in/rezababaei/",
+    text: "linkedin.com/in/rezababaei",
   },
-]
+  {
+    href: "https://github.com/ramyareye",
+    text: "github.com/ramyareye",
+  },
+];
 
-const currentAge = new Date().getFullYear() - birth.getFullYear()
+const currentAge = new Date().getFullYear() - birth.getFullYear();
 ---
-<Section class="contact" title={t('contact')}>
+
+<Section class="contact" title={t("contact")}>
   <ul>
     <li>
-      {currentAge}{t('years_old')}, {t('living')} <a href={location.href}>{location.city}</a>
+      {currentAge}{t("years_old")}, {t("living")}
+      <a href={location.href}>{location.city}</a>
     </li>
 
-    {contact.map(({ href, text }) => (
-      <li>
-        <a href={href} target="_blank">{text}</a>
-      </li>
-    ))}
+    {
+      contact.map(({ href, text }) => (
+        <li>
+          <a href={href} target="_blank">
+            {text}
+          </a>
+        </li>
+      ))
+    }
   </ul>
 </Section>
 
@@ -46,7 +56,7 @@ const currentAge = new Date().getFullYear() - birth.getFullYear()
     grid-area: infos;
     padding: 0 1.5em 1.5em;
     color: var(--emphasis);
-    font-size: .8em;
+    font-size: 0.8em;
     font-family: sans-serif;
     line-height: 1.6;
   }
@@ -57,7 +67,7 @@ const currentAge = new Date().getFullYear() - birth.getFullYear()
     list-style: none;
   }
 
-  .contact  ul a {
+  .contact ul a {
     color: var(--primary);
     text-decoration: none;
   }

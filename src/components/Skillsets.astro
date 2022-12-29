@@ -7,38 +7,29 @@ function toPercent(rate: number) {
   return `${(rate * 100).toFixed(2)}%`
 }
 
-const skillsets = {
+const skillsets= {
   human: {
-    availability: 0.625,
-    technicity: 0.875,
+    availability: 0.8,
+    technicity: 0.75,
     anticipation: 0.75,
     reactivity: 1,
+    communication: 1,
   },
 
-  programming: {
-    typescript: 1,
-    javascript: 1,
+  languages: {
+    javascript: 0.875,
+    react: 1,
+    reactnative: 0.875,
     htmlcss: 0.875,
-    actionscript: 1,
     php: 0.75,
-    cs: 0.625,
-    python: 0.5,
-    java: 0.625,
-    ruby: 0.375,
-    bash: 0.75,
   },
 
   machine: {
     linux: 0.75,
-    docker: 0.5,
-    k8s: 0.5,
-    vms: 0.875,
+    docker: 0.75,
     cloud: 0.75,
-    automation: 0.75,
-    adobe: 0.75,
-    sketch: 0.5,
-    figma: 0.75,
-  },
+    aws: 0.60,
+  }
 }
 ---
 

@@ -1,21 +1,20 @@
 ---
-import Logo from '~/components/Logo.astro'
-
-const name = 'Julien Barbay'
-const job = 'Senior Frontend Engineer'
+const name = "Reza Babaei";
+const job = "Frontend Engineer (Web & Mobile)";
 ---
+
 <header class="header">
   <hgroup>
-    <h1>{name} <Logo class="logo" /></h1>
+    <h1>{name}</h1>
     <h2>{job}</h2>
   </hgroup>
 </header>
 
 <script>
-  const qs = new URLSearchParams(window.location.search)
-  const job = qs.get('job')
+  const qs = new URLSearchParams(window.location.search);
+  const job = qs.get("job");
 
-  if (job) document.querySelector('h2')!.textContent = job
+  if (job) document.querySelector("h2")!.textContent = job;
 </script>
 
 <style>
@@ -27,11 +26,11 @@ const job = 'Senior Frontend Engineer'
   }
 
   .header h1 {
-    font-family: 'Raleway', sans-serif;
+    font-family: "Raleway", sans-serif;
   }
 
   .header h2 {
-    font-family: 'Arapey', serif;
+    font-family: "Arapey", serif;
     font-weight: normal;
   }
 

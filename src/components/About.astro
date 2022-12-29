@@ -1,18 +1,22 @@
 ---
-import { micromark } from 'micromark'
+import { micromark } from "micromark";
 
-import Section from '~/components/Section.astro';
+import Section from "~/components/Section.astro";
 
-const about = `I'm a senior frontend developer, a team leader and a tech advisor in my own field.
+const about = `I am Reza, a _front-end developer_, open-source enthusiast, and tech advisor.
 
-During my 15 years of careers I've grown from _UX designer_ to _flash developer_, _frontend developer_, _frontend lead_, _technology advisor_ and now _principal engineer_ slash _solution architect_.
+I started my career as a _PHP developer_, and later switched to _Javascript_ as my main language when _jQuery_ and _Mootools_ were at the height of their popularity.
 
-**Where I shine** is in **mentoring** engineers, advising on **keeping complexity low** and concerns separated; **acting on tech debt** to avoid friction to the growth of a company.
-`
+I've worked with many _server-side_ languages and have a good understanding of all related technologies, which gives me a versatile and unbiased point of view.
+
+I'm _solution-oriented_ and value reliability and speed above everything else. So I’m committed to delivering projects according to the designated _timelines_ without compromising _code quality_.
+
+As a frontend developer I've focused on _web_ development and _mobile_ applications, but still have an interest in _Backend_ and _DevOps_, and try to grow my skills one step at a time and expand my knowledge base.
+`;
 ---
 
 <Section class="about" title="tl;dr">
-  <span is:raw set:html={micromark(about)}></span>
+  <span is:raw set:html={micromark(about)} />
 </Section>
 
 <style is:global>
@@ -20,9 +24,9 @@ During my 15 years of careers I've grown from _UX designer_ to _flash developer_
     grid-area: about;
     padding: 1.5em 1em;
     color: var(--secondary);
-    font-family: 'Arapey', serif;
+    font-family: "Arapey", serif;
     line-height: 1.4;
-    letter-spacing: .05em;
+    letter-spacing: 0.05em;
   }
 
   .about h2 {
@@ -35,11 +39,11 @@ During my 15 years of careers I've grown from _UX designer_ to _flash developer_
   }
 
   .about span {
-    font-size: .9em;
+    font-size: 0.9em;
   }
 
   .about span p {
-    margin-top: calc(1em / .9);
+    margin-top: calc(1em / 0.9);
   }
 
   .about span p:first-child {
