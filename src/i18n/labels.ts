@@ -1,58 +1,51 @@
 export const labels = {
-  contact: 'Contact',
-  experiences: 'Experiences',
-  about: 'tldr;',
-  skillsets: 'Skillsets',
-  languages: 'Languages',
+  contact: "Contact",
+  experiences: "Experiences",
+  about: "tldr;",
+  skillsets: "Skillsets",
 
-  years_old: 'yo',
-  living: 'currently in',
-  now: 'now',
-  summary: 'Summary',
-  highlight: 'Highlight',
+  years_old: "yo",
+  living: "currently in",
+  now: "now",
+  summary: "Summary",
+  highlight: "Highlight",
 
-  human: 'Human',
-  programming: 'Programming',
-  machine: 'Computers',
+  human: "Human",
+  languages: "Programming",
+  machine: "Computers",
 
-  availability: 'Availability',
-  technicity: 'Technicity',
-  anticipation: 'Anticipation',
-  reactivity: 'Reactivity',
+  availability: "Availability",
+  technicity: "Technicity",
+  anticipation: "Anticipation",
+  reactivity: "Reactivity",
+  communication: "Communication",
 
-  javascript: 'JavaScript',
-  htmlcss: 'HTML/CSS',
-  actionscript: 'ActionScript',
-  php: 'PHP',
-  cs: 'C#',
-  python: 'Python',
-  java: 'Java',
-  ruby: 'Ruby',
-  bash: 'Bash',
+  // typescript: "Typescript",
+  javascript: "JS/TS/Node",
+  htmlcss: "HTML/CSS",
+  php: "PHP",
+  react: "React/Next.js",
+  reactnative: "React Native/Expo",
 
-  linux: 'Linux (system)',
-  vms: 'Virtualization',
-  cloud: 'Cloud Computing',
-  automation: 'Automation',
-  adobe: 'Adobe CC',
-  sketch: 'Sketch',
-  figma: 'Figma',
+  linux: "Linux",
+  docker: "Docker",
+  cloud: "Cloud",
+  aws: "AWS",
 
-  english: 'English',
-  french: 'Français',
-  japanese: '日本語'
-}
+  english: "English",
+  persian: "Persian",
+};
 
-export type Label = keyof typeof labels
+export type Label = keyof typeof labels;
 
 export function isLabel(label: string): label is Label {
-  return label in labels
+  return label in labels;
 }
 
-export function t(label:string, defaultValue = label) {
-  return isLabel(label) ? labels[label] : defaultValue
+export function t(label: string, defaultValue = label) {
+  return isLabel(label) ? labels[label] : defaultValue;
 }
 
 export function cap(str: string) {
-  return `${str[0].toUpperCase()}${str.slice(1)}`
+  return `${str[0].toUpperCase()}${str.slice(1)}`;
 }

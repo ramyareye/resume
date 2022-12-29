@@ -1,18 +1,15 @@
 ---
-import Layout from '~/layouts/Layout.astro';
-import Header from '~/components/Header.astro';
-import Contact from '~/components/Contact.astro';
-import Experiences from '~/components/Experiences.astro';
-import About from '~/components/About.astro';
-import Languages from '~/components/Languages.astro';
+import Layout from "~/layouts/Layout.astro";
+import Header from "~/components/Header.astro";
+import Contact from "~/components/Contact.astro";
+import Experiences from "~/components/Experiences.astro";
+import About from "~/components/About.astro";
+import Languages from "~/components/Languages.astro";
 // import Skillsets from '~/components/Skillsets.astro';
-import Built from '~/components/Built.astro';
+import Built from "~/components/Built.astro";
 ---
 
-<Layout
-  title="Julien Barbay"
-  description="Resume of Julien Barbay"
->
+<Layout title="Reza Babaei" description="Resume of Reza Babaei">
   <main>
     <Header />
     <Contact />
@@ -25,29 +22,29 @@ import Built from '~/components/Built.astro';
 </Layout>
 
 <script>
-function pick(array: string[]) {
-  return array[(Math.random() * array.length) | 0]
-}
+  function pick(array: string[]) {
+    return array[(Math.random() * array.length) | 0];
+  }
 
-const primary = pick(['#000000', '#201339'])
-const strong = pick(['#f8004f', '#5000e9', '#00e9c6', '#00b205', '#f82d00'])
+  const primary = pick(["#000000", "#201339"]);
+  const strong = pick(["#f8004f", "#5000e9", "#00e9c6", "#00b205", "#f82d00"]);
 
-Object.entries({ primary, strong }).forEach(([key, val]) => {
-  document.querySelector('main')?.style.setProperty(`--${key}`, val)
-})
+  Object.entries({ primary, strong }).forEach(([key, val]) => {
+    document.querySelector("main")?.style.setProperty(`--${key}`, val);
+  });
 </script>
 
 <style is:global>
   main {
     display: grid;
     grid-template-areas:
-        "header"
-        "infos"
-        "experiences"
-        "about"
-        "languages"
-        "skillsets"
-        "built";
+      "header"
+      "infos"
+      "experiences"
+      "about"
+      "languages"
+      "skillsets"
+      "built";
 
     grid-template-columns: auto;
     gap: 1em;

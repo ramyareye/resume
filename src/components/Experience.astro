@@ -1,175 +1,177 @@
 ---
-import { format } from 'date-fns'
-import { micromark } from 'micromark'
-import { cap, t } from '~/i18n/labels'
+import { format } from "date-fns";
+import { micromark } from "micromark";
+import { cap, t } from "~/i18n/labels";
 
 export interface Props {
-  title: string
-  company: string
-  website: string
-  from: Date
-  to?: Date
-  location: string
-  summary: string
-  highlight?: string
+  title: string;
+  company: string;
+  website: string;
+  from: Date;
+  to?: Date;
+  location: string;
+  summary: string;
+  highlight?: string;
 }
 
-const {
-  title,
-  company,
-  website,
-  location,
-  from,
-  to,
-  summary,
-  highlight,
-} = Astro.props
+const { title, company, website, location, from, to, summary, highlight } =
+  Astro.props;
 
-const [city] = location.split(',')
+const [city] = location.split(",");
 ---
 
 <article class="experience">
   <hgroup>
     <h3>{title}</h3>
-    <h5><a href={website} target="_blank" rel="company">{company}</a> (<a href={`https://www.google.com/maps/search/${city}`} target="_blank" rel="location">{location}</a>)</h5>
+    <h5>
+      <a href={website} target="_blank" rel="company">{company}</a> (<a
+        href={`https://www.google.com/maps/search/${city}`}
+        target="_blank"
+        rel="location">{location}</a
+      >)
+    </h5>
   </hgroup>
 
   <section>
     <h6>
-      <time datetime={new Date(from).toLocaleDateString()}>{format(from, 'MMM ’yy')}</time> - <time datetime={(to ? new Date(to) : new Date()).toLocaleDateString()}>{to ? format(to, 'MMM ’yy') : t('now')}</time>
+      <time datetime={new Date(from).toLocaleDateString()}
+        >{format(from, "MMM ’yy")}</time
+      > - <time datetime={(to ? new Date(to) : new Date()).toLocaleDateString()}
+        >{to ? format(to, "MMM ’yy") : t("now")}</time
+      >
     </h6>
 
     <dl>
-      <dt rel="summary" title={t('summary')}>
-        <strong>{t('summary')}</strong>
+      <dt rel="summary" title={t("summary")}>
+        <strong>{t("summary")}</strong>
       </dt>
-      <dd is:raw set:html={micromark(summary)}></dd>
+      <dd is:raw set:html={micromark(summary)} />
 
-      {highlight && (
-        <>
-          <dt rel="highlight" title={t('highlight')}>
-            <strong>{t('highlight')}</strong>
-          </dt>
-          <dd is:raw set:html={micromark(highlight)}></dd>
-        </>
-      )}
+      {
+        highlight && (
+          <>
+            <dt rel="highlight" title={t("highlight")}>
+              <strong>{t("highlight")}</strong>
+            </dt>
+            <dd is:raw set:html={micromark(highlight)} />
+          </>
+        )
+      }
     </dl>
   </section>
 </article>
 
 <style>
-.experience {
-  position: relative;
-  margin-top: -1px;
-  padding: 1.5em;
-  padding-left: 3em;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-  cursor: pointer;
-  color: var(--primary);
-}
-
-.experience:before {
-  counter-increment: experiences;
-  content: "0" counter(experiences);
-  position: absolute;
-  display: block;
-  left: 0;
-  margin-top: 1px;
-  width: 3em;
-  font-size: 1em;
-  font-weight: bold;
-}
-
-.experience hgroup {
-  margin: 0;
-}
-
-.experience:hover {
-  color: var(--strong);
-}
-
-.experience h3 {
-  display: inline;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1em;
-  font-weight: bold;
-  letter-spacing: .25;
-}
-
-.experience h3:after {
-  content: '-';
-  margin: 0 .1em 0 .4em;
-  font-family: 'Arapey', serif;
-  font-size: 1em;
-  font-weight: normal;
-}
-
-.experience h5 {
-  display: inline;
-  font-family: 'Arapey', serif;
-  font-size: 1em;
-  font-weight: normal;
-}
-
-.experience h5 a {
-  position: relative;
-  color: currentColor;
-}
-
-.experience [rel="company"]:after {
-  left: .9em;
-}
-
-.experience [rel="location"] {
-  font-size: .9em;
-}
-
-.experience h6 {
-  opacity: .4;
-  font-style: italic;
-  text-transform: uppercase;
-}
-
-.experience section {
-  display: none;
-}
-
-.experience.visible section {
-  display: block;
-}
-
-.experience dl {
-  margin-top: calc(1em / .8);
-  color: var(--primary);
-  opacity: .8;
-  font-size: .8em;
-  line-height: 1.6;
-  letter-spacing: .25;
-}
-
-.experience dt {
-  display: none;
-}
-
-.experience dd {
-  margin: 1.5em 0 0;
-}
-
-.experience dd > :first-child {
-  display: inline;
-}
-
-@media screen and (min-width: 768px), print {
-  .experience section {
-    display: block !important;
+  .experience {
+    position: relative;
+    margin-top: -1px;
+    padding: 1.5em;
+    padding-left: 3em;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    color: var(--primary);
+    page-break-after: always;
   }
-}
 
-@media only print {
+  .experience:before {
+    counter-increment: experiences;
+    content: "0" counter(experiences);
+    position: absolute;
+    display: block;
+    left: 0;
+    margin-top: 1px;
+    width: 3em;
+    font-size: 1em;
+    font-weight: bold;
+  }
+
+  .experience hgroup {
+    margin: 0;
+  }
+
+  .experience:hover {
+    color: var(--strong);
+  }
+
+  .experience h3 {
+    display: inline;
+    font-family: "Raleway", sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.25;
+  }
+
+  .experience h5 {
+    display: inline;
+    font-family: "Arapey", serif;
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  .experience h5 a {
+    position: relative;
+    text-decoration: none;
+  }
+
+  .experience [rel="company"]:before {
+    content: "–";
+    margin: 0 0.25em;
+  }
+
+  .experience [rel="company"]:after {
+    left: 0.9em;
+  }
+
+  .experience [rel="location"] {
+    font-size: 0.9em;
+  }
+
+  .experience h6 {
+    opacity: 0.4;
+    font-style: italic;
+    text-transform: uppercase;
+  }
+
+  .experience section {
+    display: none;
+  }
+
+  .experience.visible section {
+    display: block;
+  }
+
+  .experience dl {
+    margin-top: calc(1em / 0.8);
+    color: var(--primary);
+    opacity: 0.8;
+    font-size: 0.8em;
+    line-height: 1.6;
+    letter-spacing: 0.25;
+  }
+
+  .experience dt {
+    display: none;
+  }
+
+  .experience dd {
+    margin: 1.5em 0 0;
+  }
+
+  .experience dd > :first-child {
+    display: inline;
+  }
+
+  @media screen and (min-width: 768px), print {
+    .experience section {
+      display: block !important;
+    }
+  }
+
+  /* @media only print {
   .experience [rel="highlight"],
   .experience [rel="highlight"] + dd {
     display: none !important;
   }
-}
+} */
 </style>
