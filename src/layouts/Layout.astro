@@ -5,8 +5,6 @@ export interface Props {
   keywords?: string[];
 }
 
-
-
 const { title, description, keywords } = Astro.props;
 ---
 
@@ -15,28 +13,29 @@ const { title, description, keywords } = Astro.props;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}favicon.svg`} />
     <title>{title}</title>
     {description && <meta name="description" content={description} />}
-    {keywords && <meta name="keywords" content={keywords.join(',')} />}
+    {keywords && <meta name="keywords" content={keywords.join(",")} />}
 
-    <meta property="og:title" content={title}>
-    <meta property="og:site_name" content={title}>
-    <meta property="og:url" content={`${import.meta.env.SITE}${import.meta.env.BASE_URL}`}>
-    {description && <meta property="og:description" content={description}>}
-    <meta property="og:type" content="website">
-    <meta property="og:image" content={`${import.meta.env.BASE_URL}opengraph.svg`}>
+    <meta property="og:title" content={title} />
+    <meta property="og:site_name" content={title} />
+    <meta
+      property="og:url"
+      content={`${import.meta.env.SITE}${import.meta.env.BASE_URL}`}
+    />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content="website" />
   </head>
   <body>
     <slot />
     <script>
-      document.body.style.setProperty('--tilt', `${Math.random() * 360}deg`)
+      document.body.style.setProperty("--tilt", `${Math.random() * 360}deg`);
     </script>
   </body>
 </html>
 
 <style is:global>
-  @import url('https://fonts.googleapis.com/css?family=Arapey:400i|Raleway:400,800&display=swap');
+  @import url("https://fonts.googleapis.com/css?family=Arapey:400i|Raleway:400,800&display=swap");
 
   * {
     margin: 0;
@@ -44,7 +43,8 @@ const { title, description, keywords } = Astro.props;
     -webkit-print-color-adjust: exact;
   }
 
-  html, body {
+  html,
+  body {
     position: absolute;
     width: 100%;
     min-height: 100%;
@@ -68,7 +68,7 @@ const { title, description, keywords } = Astro.props;
     }
 
     body {
-      padding: 0 .5cm;
+      padding: 0 0.5cm;
     }
   }
 </style>

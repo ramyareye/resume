@@ -23,12 +23,12 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'yarn'
+          cache: "yarn"
 
       - run: yarn
       - run: yarn build
         env:
-          BASE_URL: https://y-nk.github.io
+          BASE_URL: https://ramyareye.github.io
           ROOT_PATH: /resume
       - uses: actions/upload-pages-artifact@v1
         with:
