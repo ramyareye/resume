@@ -4,8 +4,9 @@ import Header from "~/components/Header.astro";
 import Contact from "~/components/Contact.astro";
 import Experiences from "~/components/Experiences.astro";
 import About from "~/components/About.astro";
-import Languages from "~/components/Languages.astro";
+// import Languages from "~/components/Languages.astro";
 import Skillsets from "~/components/Skillsets.astro";
+// import Projects from "~/components/Projects.astro";
 ---
 
 <Layout title="Reza Babaei" description="Resume of Reza Babaei">
@@ -14,8 +15,9 @@ import Skillsets from "~/components/Skillsets.astro";
     <Contact />
     <About />
     <Experiences />
-    <!-- <Languages /> -->
+    <!-- <Projects /> -->
     <Skillsets />
+    <!-- <Languages /> -->
   </main>
 </Layout>
 
@@ -40,8 +42,9 @@ import Skillsets from "~/components/Skillsets.astro";
       "infos"
       "experiences"
       "about"
-      "languages"
-      "skillsets";
+      "skillsets"
+      /* "projects" */
+      "languages";
 
     grid-template-columns: auto;
     gap: 1em;
@@ -102,8 +105,9 @@ import Skillsets from "~/components/Skillsets.astro";
       grid-template-areas:
         "header infos"
         "experiences about"
-        "experiences languages"
-        "experiences skillsets";
+        /* "experiences projects" */
+        "experiences skillsets"
+        "experiences languages";
 
       grid-template-columns: auto minmax(min-content, 28%);
       grid-template-rows: repeat(min-content, 10);
