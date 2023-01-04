@@ -12,9 +12,10 @@ export interface Props {
   location: string;
   summary: string;
   highlight?: string;
+  challenges?: string[];
 }
 
-const { title, company, website, location, from, to, summary, highlight } =
+const { title, company, website, location, from, to, summary, highlight, challenges } =
   Astro.props;
 
 const [city] = location.split(",");
@@ -35,9 +36,9 @@ const [city] = location.split(",");
   <section>
     <h6>
       <time datetime={new Date(from).toLocaleDateString()}
-        >{format(from, "MMM ’yy")}</time
+        >{format(from, "MMMM ’yyyy")}</time
       > - <time datetime={(to ? new Date(to) : new Date()).toLocaleDateString()}
-        >{to ? format(to, "MMM ’yy") : t("now")}</time
+        >{to ? format(to, "MMMM ’yyyy") : t("now")}</time
       >
     </h6>
 
@@ -54,6 +55,13 @@ const [city] = location.split(",");
               <strong>{t("highlight")}</strong>
             </dt>
             <dd is:raw set:html={micromark(highlight)} />
+            {
+              challenges && (
+                <ul>
+                  {challenges.map(c => <li>{c}</li>)}
+                </ul>
+              )
+            }
           </>
         )
       }
