@@ -7,44 +7,66 @@ function toPercent(rate: number) {
   return `${(rate * 100).toFixed(2)}%`
 }
 
-const skillsets= {
-  human: {
-    availability: 0.8,
-    technicity: 0.75,
-    anticipation: 0.75,
-    reactivity: 1,
-    communication: 1,
-  },
+const projects= {
+    'https://wonderfruit.co/': 'RN APP',
+    'https://amity.co/': 'TS SDK',
+    'https://upera.tv/': 'RN APP/Web App',
+    'http://ovisit.ir/': 'RN APP',
+    'https://linksee.me/': '',
+    'https://headstart.work/': '',
+    'https://komodaa.com/': '',
+    'https://houseno4.org/': '',
+    'https://fooladino.com/': ''
+};
 
-  languages: {
-    javascript: 0.875,
-    react: 1,
-    reactnative: 0.875,
-    htmlcss: 0.875,
-    php: 0.75,
-  },
+const skillsets= [
+  'javascript',
+  'react',
+  'reactnative',
+  'node',
+  'htmlcss',
+  'monorepos',
+  'cicd',
+  'php',
+  'vuejs',
+  'linux',
+  'docker',
+  'aws',
+  'mysql'
+];
 
-  machine: {
-    linux: 0.75,
-    docker: 0.75,
-    cloud: 0.75,
-    aws: 0.60,
-  }
-}
+const opensource = [
+  'react native eject',
+  'react native elegant',
+  'multiple talks in Iran React Community',
+];
 ---
 
-<Section class="skillsets" title={t('skillsets')}>
-  {Object.entries(skillsets).map(([name, skillset]) => (
-    <section class="skillset">
-      <h3>{t(name)}</h3>
-        <dl>
-          {Object.entries(skillset).map(([skill, rate]) => (
-            <dt>{t(skill)}</dt>
-            <dd style={{ '--value': toPercent(rate) }}>{toPercent(rate)}</dd>
-          ))}
-        </dl>
-    </section>
-  ))}
+<Section class="skillsets" title={t('skills')}>
+  <section class="skillset">
+    <h3>{t('skills')}</h3>
+      <dl>
+        {skillsets.map((skill) => (
+          <dt>{t(skill)}</dt>
+        ))}
+      </dl>
+  </section>
+  <section class="skillset">
+    <h3>{t('projects')}</h3>
+    <dl>
+        {Object.entries(projects).map(([name, project]) => (
+            <dt><a href="name" target="_blank">{name}{project !== '' && ` (${project})`}</a></dt>
+        ))}
+    </dl>
+  </section>
+  <section class="skillset">
+    <h3>{t('opensource')}</h3>
+      <dl>
+        {opensource.map((os) => (
+          <dt>{t(os)}</dt>
+        ))}
+      </dl>
+  </section>
 </Section>
 
 <style>
@@ -73,12 +95,12 @@ const skillsets= {
   }
 
   .skillset dl {
-    display: grid;
-    grid-template-columns: auto min-content;
-    grid-gap: calc(.25em/.9) 0;
+    display: block;
+    /* grid-template-columns: auto min-content;
+    grid-gap: calc(.25em/.9) 0; */
     align-items: center;
     font-family: 'Arapey', serif;
-    font-size: .9em;
+    font-size: 1em;
   }
 
   .skillset dt {
@@ -88,13 +110,13 @@ const skillsets= {
     white-space: nowrap;
   }
 
-  .skillset dt:after {
+  /* .skillset dt:after {
     flex: 1 1 0%;
     content: '........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................';
     width: 1px;
     padding: 0 .25em;
     overflow: hidden;
-  }
+  } */
 
   .skillset dd {
     position: relative;

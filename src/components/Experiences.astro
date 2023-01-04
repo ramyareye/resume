@@ -7,67 +7,78 @@ import Experience from "~/components/Experience.astro";
 const experiences = [
   {
     title: "React Native Engineer",
-    company: "Scratchfirst(Wonderfruit)",
+    company: "Wonderfruit.co",
     website: "https://wonderfruit.co/",
     from: new Date("2022-10-01"),
     location: "Bangkok, Thailand",
 
-    summary: `I’ve joined the team as the first in-house engineer. My daily routine consists of maintaining and optimizing the company's React Native application. Moreover I help the team with modifying AWS lambdas and updating our Wordpress website. My mission in Wonderfruit is a mix of planning, architecture and implementation based on React Native, Node and PHP.`,
+    summary: `I joined the team as the first in-house engineer. My daily routine consists of maintaining and optimizing the company's React Native application. Moreover, I help the team with modifying AWS lambdas and updating our wordpress website. My mission in Wonderfruit is a mix of planning, architecture, and implementation based on React Native, Node, and PHP.`,
+    highlight: "My main areas of work in Wonderfruit:",
+    challenges: [
+      'Improve performance & debug application codebase according to the timeline',
+      'Consistent use of React Native Maps in both iOS/Android',
+      'Stability, Accessibility & usage of techs like Firebase, Codepush, etc.'
+    ]
+
   },
   {
     title: "Web/Mobile Engineer(Typescript SDK)",
-    company: "Amity",
+    company: "Amity.co",
     website: "https://amity.co/",
     from: new Date("2021-07-01"),
     to: new Date("2022-10-15"),
     location: "Bangkok, Thailand",
 
-    summary: `At Amity I was in charge of Typescript SDK, a multi environment wrapper on top of the company API. I was responsible for implementing new features, research, POCs, modifications, interviewing new members, and reviewing teammates' contributions.`,
-    highlight:
-      "Our main challenges at Amity were: Syncing platform features in web & mobile., Working on fundamental features like Caching, Reactivity, and Real-Time Events, Conducting interviews and help onboarding new team members, Create and maintain Amity Social Cloud React Native Sample App",
+    summary: `At Amity I was in charge of Typescript SDK, a multi-environment wrapper on top of the company API. I was responsible for implementing new features, research, POCs, modifications, interviewing new members, and reviewing teammates' contributions.`,
+    highlight: "Our main challenges at Amity were:",
+    challenges: [
+      'Working on fundamental features like Caching, Reactivity, and Real-Time Events',
+      'Syncing platform features on the web, native mobile & React Native.',
+      'Conducting interviews and helping onboarding new team members',
+    ]
   },
   {
     title: "Fullstack Engineer",
-    company: "Upera VOD",
+    company: "Upera.tv",
     website: "https://upera.tv/",
     from: new Date("2015-01-01"),
     to: new Date("2021-06-28"),
     location: "Tehran, Iran",
 
-    summary: `At Upera I created the core software with Laravel4 and led a team of 5 programmers to build user interfaces. Based on our needs we used Nuxt for web development, ReactNative for mobile development, Java for Android TV, and React and Typescript for management dashboard. Performance and efficiency were main concerns in Upera and we managed to reach our goals using the most suitable patterns and techniques.`,
+    summary: `At Upera, also known as the Iranian Netflix, I developed the platform’s core software with Laravel4 and led a team of 5 programmers to build user interfaces. Based on our needs we used Nuxt for web development, ReactNative for mobile development, Java for Android TV, and React and Typescript for the management dashboard. Performance and efficiency for millions of users were the main concerns in Upera and we managed to reach our goals using the most suitable patterns and techniques.`,
     // highlight: `Most notable projects in Upera included: Website development with Vue and Nuxt, Managing the production of TV application with Java, Mobile application development with React Native and TypeScript, and experimentations with the implementation of ReactNative Reanimated, Creating a React dashboard with TypeScript, TailwindCSS, and React Query`,
   },
   {
-    title: "System Architect",
+    title: "Fullstack Developer",
     company: "Peste",
     website: "https://peste.dev/",
     from: new Date("2020-04-01"),
     to: new Date("2021-03-01"),
-    location: "Amsterdam, Netherlands - Remote",
+    location: "Amsterdam, Netherlands - Remote - Part time",
 
-    summary: `At Peste I had a mission to design several full-stack and frontend web platforms, provide reliable time and budget estimations, and deliver products to customers with a 4-person team.`,
+    summary: `At Peste I had a mission to consulting with architecture design of several full-stack and frontend web platforms, provide reliable time and budget estimations, and deliver products to customers with a 4-person team.`,
 
-    highlight: `My core activities included: Building stable and maintainable codebases using Typescript, Node, PHP, Helping the backend team with designing the database and the base application structure, Using debugging skills to check and improve code in order to enhance the functionality and user experience of web applications, Front-end development for 5+ websites and web apps, using React.js, Next.js, Redux, and Apollo, Creating custom React.js components and hooks.`,
+    highlight: `My core activities included: Building stable and maintainable codebases using Typescript, Node, PHP, Helping the backend team with designing the database and the base application structure, Using debugging skills to check and improve code in order to enhance the functionality and user experience of web applications, Front-end development for 5+ web apps, using React.js, Next.js, Redux and Apollo Graphql.`,
+  },
+  {
+    title: "Web Engineer",
+    company: "Varzesh3.com",
+    website: "https://varzesh3.com/",
+    from: new Date("2012-08-01"),
+    to: new Date("2013-02-01"),
+    location: "Tehran, Iran",
+    
+    summary: `Varzesh3 is the top Iranian sports news agency - currently 19th in Iran traffic ranking. I was responsible for designing and managing the "national online games tournament" platform, where users could register for tournaments. Beside I managed to a initialize a team from interviewing to production and launch the company e-commerce project.`,
   },
   {
     title: "Web Developer",
-    company: "SoftMax",
+    company: "Soft-Max.com",
     website: "https://soft-max.com/",
     from: new Date("2013-08-01"),
     to: new Date("2014-02-01"),
     location: "Erbil, Iraq",
 
-    summary: `SoftMax is a leading Information Technology solutions provider, offering Business Management, and Training Services. My responsibilities at Soft-max were building the UI in some services based on .Net and Bootstrap, building new designs and researching upcoming technologies.`,
-  },
-  {
-    title: "Lead Engineer",
-    company: "Varzesh3",
-    website: "https://varzesh3.com/",
-    from: new Date("2012-08-01"),
-    to: new Date("2013-02-01"),
-    location: "Tehran, Iran",
-
-    summary: `Varzesh3 is the top Iranian sports news agency. At the time I had the responsibility to design and manage the "national online games tournament" platform, so that users can register and take part in the tournament. At the time I was using OpenCart, Symfony and Joomla to deliver the needs.`,
+    summary: `SoftMax is a leading Information Technology solutions provider. My responsibilities at Soft-max were building the UI, applying new designs, and researching adoption plan for upcoming technologies.`,
   },
 ];
 ---

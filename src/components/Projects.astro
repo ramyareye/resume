@@ -1,0 +1,73 @@
+---
+import { t } from "~/i18n/labels";
+
+import Section from "~/components/Section.astro";
+
+function toPercent(rate: number) {
+  return `${(rate * 100).toFixed(2)}%`
+}
+
+const projects= {
+    'https://wonderfruit.co/': 'RN APP',
+    'https://amity.co/': 'TS SDK',
+    'https://upera.tv/': '',
+    'https://linksee.me/': '',
+    'https://headstart.work/': '',
+    'https://komodaa.com/': '',
+    'https://houseno4.org/': ''
+};
+---
+
+<Section class="projects" title={t('projects')}>
+    <section class="project">
+        <h3>{t('projects')}</h3>
+        <ul>
+            {Object.entries(projects).map(([name, project]) => (
+                <li><a href="name" target="_blank">{name}{project !== '' && ` (${project})`}</a></li>
+            ))}
+        </ul>
+    </section>
+</Section>
+
+<style>
+  .projects {
+    grid-area: projects;
+    padding: 2.5em 1.5em;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .project + .project {
+    margin-top: 1.5em;
+  }
+
+  .project {
+    color: var(--primary);
+  }
+
+  .project:hover {
+    color: var(--strong);
+  }
+
+  .project h3 {
+    margin: 0 0 .5em;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+  }
+
+  .project ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .project li {
+    font-family: 'Arapey', serif;
+    font-style: normal;
+    color: var(--secondary);
+  }
+
+  @media screen and (min-width: 768px), print {
+    .projects {
+      border: none;
+    }
+  }
+</style>

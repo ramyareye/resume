@@ -11,21 +11,21 @@ const location = {
 };
 
 const contact = [
+  // {
+  //   href: "tel:+66835299139",
+  //   text: "+66 83 529 91339",
+  // },
+  // {
+  //   href: "mailto:ramyariran@gmail.com",
+  //   text: "ramyariran@gmail.com",
+  // },
   {
-    href: "tel:+66835299139",
-    text: "+66 83 529 91339",
-  },
-  {
-    href: "mailto:ramyariran@gmail.com",
-    text: "ramyariran@gmail.com",
-  },
-  {
-    href: "https://www.linkedin.com/in/rezababaei/",
-    text: "linkedin.com/in/rezababaei",
+    href: "https://linkedin.com/in/rezababaei/",
+    text: "https://linkedin.com/in/rezababaei",
   },
   {
     href: "https://github.com/ramyareye",
-    text: "github.com/ramyareye",
+    text: "https://github.com/ramyareye",
   },
 ];
 
@@ -35,7 +35,7 @@ const currentAge = new Date().getFullYear() - birth.getFullYear();
 <Section class="contact" title={t("contact")}>
   <ul>
     <li>
-      {currentAge}{t("years_old")}, {t("living")}
+      {t("living")}
       <a href={location.href}>{location.city}</a>
     </li>
 
