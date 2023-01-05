@@ -22,8 +22,7 @@ export const labels = {
   reactivity: "Reactivity",
   communication: "Communication",
 
-  // typescript: "Typescript",
-  javascript: "Javascript, Typescript",
+  javascript: "JavaScript, TypeScript",
   node: "Node, Express",
   htmlcss: "HTML, CSS",
   php: "PHP, Laravel",
