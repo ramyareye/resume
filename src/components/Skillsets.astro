@@ -55,7 +55,7 @@ const opensource = [
     <h3>{t('projects')}</h3>
     <dl>
         {Object.entries(projects).map(([name, project]) => (
-            <dt><a href="name" target="_blank">{name}{project !== '' && ` (${project})`}</a></dt>
+            <dt><a href={name} target="_blank">{name}{project !== '' && ` (${project})`}</a></dt>
         ))}
     </dl>
   </section>
