@@ -52,7 +52,12 @@ const skillsets = [
     <h3>{t('projects')}</h3>
     <dl>
         {Object.entries(projects).map(([name, project]) => (
-            <dt><a href={name} target="_blank"><Link /> {project}</a></dt>
+            <dt>
+              <a href={name} target="_blank">
+                {/* <Link /> */}
+                {project}
+              </a>
+            </dt>
         ))}
     </dl>
   </section>
