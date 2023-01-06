@@ -21,15 +21,19 @@ const contact = [
   // },
   {
     href: "https://linkedin.com/in/rezababaei/",
-    text: "https://linkedin.com/in/rezababaei",
+    text: "Linkedin",
   },
   {
     href: "https://github.com/ramyareye",
-    text: "https://github.com/ramyareye",
+    text: "Github",
   },
   {
     href: "https://stackoverflow.com/users/3197080",
-    text: "https://stackoverflow.com/users/3197080",
+    text: "Stackoverflow",
+  },
+  {
+    href: "mailto:ramyariran@gmail.com",
+    text: "Email",
   },
 ];
 
@@ -52,6 +56,10 @@ const currentAge = new Date().getFullYear() - birth.getFullYear();
         </li>
       ))
     }
+    <li>
+      {t("living")}
+      <a href={location.href} target="_blank">{location.city}</a>
+    </li>
   </ul>
 </Section>
 

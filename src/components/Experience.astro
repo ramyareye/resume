@@ -36,9 +36,9 @@ const [city] = location.split(",");
   <section>
     <h6>
       <time datetime={new Date(from).toLocaleDateString()}
-        >{format(from, "MMMM ’yyyy")}</time
+        >{format(from, "MMM yyyy")}</time
       > - <time datetime={(to ? new Date(to) : new Date()).toLocaleDateString()}
-        >{to ? format(to, "MMMM ’yyyy") : t("now")}</time
+        >{to ? format(to, "MMM yyyy") : t("now")}</time
       >
     </h6>
 

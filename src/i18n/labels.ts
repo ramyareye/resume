@@ -4,11 +4,11 @@ export const labels = {
   about: "tldr;",
   skills: "Skills",
   projects: "Projects",
-  opensource: "Open Source",
+  opensource: "Open Source Projects",
 
   years_old: "yo",
   living: "currently in",
-  now: "now",
+  now: "Present",
   summary: "Summary",
   highlight: "Highlight",
 
@@ -28,6 +28,7 @@ export const labels = {
   php: "PHP, Laravel",
   react: "React, Next.js",
   reactnative: "React Native, Expo",
+  git: "Git",
   vuejs: "Vue.js",
   monorepos: "Monorepos, Lerna, Turbo",
   cicd: "CI/CD, Github Actions",

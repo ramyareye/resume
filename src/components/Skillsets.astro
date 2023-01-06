@@ -3,43 +3,40 @@ import { t } from "~/i18n/labels";
 
 import Section from "~/components/Section.astro";
 
+import Link from '~/components/Link.astro'
+
 function toPercent(rate: number) {
   return `${(rate * 100).toFixed(2)}%`
 }
 
 const projects= {
-    'https://wonderfruit.co/': 'RN APP',
-    'https://amity.co/': 'TS SDK',
-    'https://upera.tv/': 'RN APP/Web App',
-    'http://ovisit.ir/': 'RN APP',
-    'https://linksee.me/': '',
-    'https://headstart.work/': '',
-    'https://komodaa.com/': '',
-    'https://houseno4.org/': '',
-    'https://fooladino.com/': ''
+    'https://apps.apple.com/us/app/wonderfruit/id1065512368?ls=1': 'Wonderfruit (iOS)',
+    'https://play.google.com/store/apps/details?id=com.scratchfirst.wonderfruitapp': 'Wonderfruit (Android)',
+    'https://www.npmjs.com/package/@amityco/ts-sdk': 'Amity TS SDK',
+    'https://upera.tv/': 'Upera',
+    'https://anardoni.com/ios/app/gUFrGOKi': 'Upera (iOS)',
+    'https://play.google.com/store/apps/details?id=com.techera.upera': 'Upera (Android)',
+    'https://anardoni.com/ios/app/-GKmEN52': 'Ovisit',
+    'https://anardoni.com/ios/app/-GKmEN52': 'Ovisit (iOS)',
+    'https://play.google.com/store/apps/details?id=com.ovisitapp': 'Ovisit (Android)',
+    'https://linksee.me/': 'Linksee',
+    'https://headstart.work/': 'Headstart',
+    'https://komodaa.com/': 'Komodaa',
+    'https://houseno4.org/': 'House no4',
+    'https://fooladino.com/': 'Fooladino',
+    'https://www.npmjs.com/package/react-native-eject': 'React Native Eject (Open Source)',
+    'https://github.com/ramyareye/elegant-react-native-presentation': 'React Native Presentation (Talk)'
 };
 
-const skillsets= [
-  'javascript',
-  'react',
-  'reactnative',
-  'node',
-  'htmlcss',
-  'monorepos',
-  'cicd',
-  'php',
-  'vuejs',
-  'linux',
-  'docker',
-  'aws',
-  'mysql'
+const skillsets = [
+  'HTML/CSS, JavaScript, TypeScript',
+  'React, React Native, Node, Express',
+  'Next.js, Expo, Vue.js, PHP, Laravel',
+  'CI/CD, Github Actions, Monorepos',
+  'Lerna, Turbo, Git, Linux, Docker',
+  'AWS/CW, Mysql, PostgreSQL, Jest'
 ];
 
-const opensource = [
-  'react native eject',
-  'react native elegant',
-  'multiple talks in Iran React Community',
-];
 ---
 
 <Section class="skillsets" title={t('skills')}>
@@ -47,25 +44,17 @@ const opensource = [
     <h3>{t('skills')}</h3>
       <dl>
         {skillsets.map((skill) => (
-          <dt>{t(skill)}</dt>
+          <dt>{skill}</dt>
         ))}
       </dl>
   </section>
-  <section class="skillset">
+  <section class="skillset projects">
     <h3>{t('projects')}</h3>
     <dl>
         {Object.entries(projects).map(([name, project]) => (
-            <dt><a href={name} target="_blank">{name}{project !== '' && ` (${project})`}</a></dt>
+            <dt><a href={name} target="_blank"><Link /> {project}</a></dt>
         ))}
     </dl>
-  </section>
-  <section class="skillset">
-    <h3>{t('opensource')}</h3>
-      <dl>
-        {opensource.map((os) => (
-          <dt>{t(os)}</dt>
-        ))}
-      </dl>
   </section>
 </Section>
 
@@ -96,27 +85,18 @@ const opensource = [
 
   .skillset dl {
     display: block;
-    /* grid-template-columns: auto min-content;
-    grid-gap: calc(.25em/.9) 0; */
     align-items: center;
-    font-family: 'Arapey', serif;
-    font-size: 1em;
+    font-family: 'Raleway', serif;
+    font-size: .95em;
+    line-height: 1.5em;
   }
 
   .skillset dt {
     display: flex;
-    margin-right: 1em;
     color: var(--secondary);
     white-space: nowrap;
+    font-size: 0.95em;
   }
-
-  /* .skillset dt:after {
-    flex: 1 1 0%;
-    content: '........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................';
-    width: 1px;
-    padding: 0 .25em;
-    overflow: hidden;
-  } */
 
   .skillset dd {
     position: relative;
@@ -149,6 +129,10 @@ const opensource = [
   .skillset dd:after {
     width: var(--value, 0);
     background: currentColor;
+  }
+
+  .skillset dt a {
+    text-decoration: none;
   }
 
   @media screen and (min-width: 768px), print {
