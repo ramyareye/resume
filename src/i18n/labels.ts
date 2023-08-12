@@ -13,7 +13,7 @@ export const labels = {
   highlight: "Highlight",
 
   human: "Human",
-  languages: "Programming",
+  languages: "Languages",
   machine: "Computers",
 
   availability: "Availability",
