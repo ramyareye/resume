@@ -6,7 +6,18 @@ import Experience from "~/components/Experience.astro";
 
 const experiences = [
   {
-    title: "React Native Engineer",
+    title: "React/React Native Developer",
+    company: "UN.org",
+    website: "https://un.org/en/",
+    from: new Date("2023-04-20"),
+    location: "Bangkok, Thailand",
+
+    summary: ``,
+    highlight: "",
+    challenges: [],
+  },
+  {
+    title: "React/React Native Engineer",
     company: "Wonderfruit.co",
     website: "https://wonderfruit.co/",
     from: new Date("2022-10-01"),
@@ -15,12 +26,11 @@ const experiences = [
     summary: `I joined the team as the first in-house engineer. My daily routine consists of maintaining and optimizing the company's React Native application. Moreover, I help the team with modifying AWS lambdas and updating our wordpress website. My mission in Wonderfruit is a mix of planning, architecture, and implementation based on React Native, Node, and PHP.`,
     highlight: "My main areas of work in Wonderfruit:",
     challenges: [
-      'Improving performance & debug application codebase according to the timeline',
-      'Establish React Native Maps in both iOS/Android',
-      'Stability, Accessibility & usage of techs like Firebase, Codepush, Expo',
-      'Initial a Laravel project to help marketing team with data reports'
-    ]
-
+      "Improving performance & debug application codebase according to the timeline",
+      "Establish React Native Maps in both iOS/Android",
+      "Stability, Accessibility & usage of techs like Firebase, Codepush, Expo",
+      "Initial a Laravel project to help marketing team with data reports",
+    ],
   },
   {
     title: "Web/Mobile Engineer",
@@ -33,11 +43,11 @@ const experiences = [
     summary: `At Amity I was in charge of TypeScript SDK, a multi-environment wrapper on top of the company API. I was responsible for implementing new features, research, POCs, modifications, and reviewing teammates' contributions.`,
     highlight: "Our main challenges at Amity were:",
     challenges: [
-      'Working on fundamental features like Caching, Reactivity, and Real-Time Events',
-      'Syncing platform features on the web, native mobile & React Native',
-      'Conducting interviews and helping onboarding new team members',
-      'Designing and implementation of unit tests using Jest'
-    ]
+      "Working on fundamental features like Caching, Reactivity, and Real-Time Events",
+      "Syncing platform features on the web, native mobile & React Native",
+      "Conducting interviews and helping onboarding new team members",
+      "Designing and implementation of unit tests using Jest",
+    ],
   },
   {
     title: "Fullstack Engineer",
@@ -46,9 +56,9 @@ const experiences = [
     from: new Date("2020-04-01"),
     to: new Date("2021-03-01"),
     location: "Amsterdam, Netherlands - Remote",
-    
+
     summary: `At Peste I had a mission to consult with architecture design of several full-stack and frontend web platforms, provide reliable time and budget estimations, and deliver products to customers with a 4-person team.`,
-    
+
     highlight: `My core activities included: Building stable and maintainable codebases using TypeScript, Node, PHP, Helping the backend team with designing the database and the base application structure, Using debugging skills to check and improve code in order to enhance the functionality and user experience of web applications, Front-end development for 5+ web apps, using React.js, Next.js, Redux, Graphql and Draft.js.`,
   },
   {
@@ -69,8 +79,9 @@ const experiences = [
     from: new Date("2013-08-01"),
     to: new Date("2014-02-01"),
     location: "Erbil, Iraq",
-    
-    summary: `SoftMax is a leading Information Technology solutions provider. My responsibilities at Soft-max were building the UI, applying new designs, and researching adoption plan for upcoming technologies.`,
+
+    summary: "",
+    // `SoftMax is a leading Information Technology solutions provider. My responsibilities at Soft-max were building the UI, applying new designs, and researching adoption plan for upcoming technologies.`,
   },
   {
     title: "Web Engineer",
@@ -79,7 +90,7 @@ const experiences = [
     from: new Date("2012-08-01"),
     to: new Date("2013-02-01"),
     location: "Tehran, Iran",
-    
+
     summary: `Varzesh3 is the top Iranian sports news agency - currently 19th in Iran traffic ranking. I was responsible for designing and managing the "national online games tournament" platform, where users could register for tournaments. Beside I managed to a initialize a team from interviewing to production and launch the company e-commerce project.`,
   },
 ];

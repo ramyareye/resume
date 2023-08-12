@@ -15,8 +15,17 @@ export interface Props {
   challenges?: string[];
 }
 
-const { title, company, website, location, from, to, summary, highlight, challenges } =
-  Astro.props;
+const {
+  title,
+  company,
+  website,
+  location,
+  from,
+  to,
+  summary,
+  highlight,
+  challenges,
+} = Astro.props;
 
 const [city] = location.split(",");
 ---
@@ -43,7 +52,7 @@ const [city] = location.split(",");
     </h6>
 
     <dl>
-      <dt rel="summary" title={t("summary")}>
+      <dt title={t("summary")}>
         <strong>{t("summary")}</strong>
       </dt>
       <dd is:raw set:html={micromark(summary)} />
@@ -51,17 +60,17 @@ const [city] = location.split(",");
       {
         highlight && (
           <>
-            <dt rel="highlight" title={t("highlight")}>
+            <dt title={t("highlight")}>
               <strong>{t("highlight")}</strong>
             </dt>
             <dd is:raw set:html={micromark(highlight)} />
-            {
-              challenges && (
-                <ul>
-                  {challenges.map(c => <li>{c}</li>)}
-                </ul>
-              )
-            }
+            {challenges && (
+              <ul>
+                {challenges.map((c) => (
+                  <li>{c}</li>
+                ))}
+              </ul>
+            )}
           </>
         )
       }
@@ -79,7 +88,6 @@ const [city] = location.split(",");
     border-bottom: 1px solid var(--border);
     cursor: pointer;
     color: var(--primary);
-    page-break-after: always;
   }
 
   .experience:before {
@@ -110,21 +118,24 @@ const [city] = location.split(",");
     letter-spacing: 0.25;
   }
 
+  .experience h3:after {
+    content: "-";
+    margin: 0 0.1em 0 0.4em;
+    font-family: "Arapey", serif;
+    font-size: 1em;
+    font-weight: normal;
+  }
+
   .experience h5 {
     display: inline;
-    font-family: "Raleway", serif;
+    font-family: "Arapey", serif;
     font-size: 1em;
     font-weight: normal;
   }
 
   .experience h5 a {
     position: relative;
-    text-decoration: none;
-  }
-
-  .experience [rel="company"]:before {
-    content: "–";
-    margin: 0 0.25em;
+    color: currentColor;
   }
 
   .experience [rel="company"]:after {
@@ -163,13 +174,12 @@ const [city] = location.split(",");
   }
 
   .experience dd {
-    margin: 1.3em 0 0;
+    margin: 1em 0 0;
   }
 
   .experience dd > :first-child {
     display: inline;
   }
-
   @media screen and (min-width: 768px), print {
     .experience section {
       display: block !important;

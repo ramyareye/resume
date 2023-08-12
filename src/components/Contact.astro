@@ -20,20 +20,20 @@ const contact = [
   //   text: "ramyariran@gmail.com",
   // },
   {
-    href: "https://linkedin.com/in/rezababaei/",
-    text: "Linkedin",
+    href: "mailto:ramyariran@gmail.com",
+    text: "Email",
   },
   {
     href: "https://github.com/ramyareye",
     text: "Github",
   },
   {
-    href: "https://stackoverflow.com/users/3197080",
-    text: "Stackoverflow",
+    href: "https://linkedin.com/in/rezababaei/",
+    text: "Linkedin",
   },
   {
-    href: "mailto:ramyariran@gmail.com",
-    text: "Email",
+    href: "https://stackoverflow.com/users/3197080",
+    text: "Stackoverflow",
   },
 ];
 
@@ -42,11 +42,6 @@ const currentAge = new Date().getFullYear() - birth.getFullYear();
 
 <Section class="contact" title={t("contact")}>
   <ul>
-    <li>
-      {t("living")}
-      <a href={location.href} target="_blank">{location.city}</a>
-    </li>
-
     {
       contact.map(({ href, text }) => (
         <li>
