@@ -1,0 +1,69 @@
+---
+import { cap, t } from '~/i18n/labels';
+
+import Section from '~/components/Section.astro'
+
+const educations = {
+  it: {
+    title: 'Software Engineering',
+    degree: 'Associate degree',
+  },
+}
+---
+
+<Section class="educations" title={t('educations')}>
+  <dl>
+    {Object.entries(educations).map(([text, { title, degree }]) => (
+      <>
+        <dt title={cap(title)}>{t(title)}</dt>
+        <dd>{degree}</dd>
+      </>
+    ))}
+  </dl>
+</Section>
+
+<style is:global>
+  .educations {
+    grid-area: educations;
+    padding: 2.5em 1.5em;
+    border-top: 1px solid var(--border);
+  }
+
+  .educations h2 {
+    display: block;
+    margin: 0 0 .5em;
+    color: var(--primary);
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+  }
+
+
+  .educations dl {
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-gap: calc(.25em/.9) 0;
+    align-items: center;
+    color: var(--secondary);
+    font-family: 'Arapey', sans-serif;
+    font-size: .9em;
+  }
+
+  .educations dt {
+    display: flex;
+    margin-right: .25em;
+    white-space: nowrap;
+  }
+
+  .educations dt:after {
+    flex: 1 1 0%;
+    content: '........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................';
+    width: 1px;
+    padding: 0 .25em;
+    overflow: hidden;
+    color: var(--light);
+  }
+
+  .educations dd {
+    white-space: nowrap;
+  }
+</style>

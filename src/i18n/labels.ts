@@ -4,6 +4,7 @@ export const labels = {
   about: "tldr;",
   skills: "Skills",
   projects: "Projects",
+  educations: "Educations",
   opensource: "Open Source Projects",
 
   years_old: "yo",

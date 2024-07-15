@@ -6,6 +6,9 @@ import Experiences from "~/components/Experiences.astro";
 import About from "~/components/About.astro";
 import Languages from "~/components/Languages.astro";
 import Built from "~/components/Built.astro";
+import Educations from '~/components/Educations.astro';
+import Skillsets from '~/components/Skillsets.astro';
+
 ---
 
 <Layout title="Reza Babaei" description="Resume of Reza Babaei">
@@ -14,7 +17,9 @@ import Built from "~/components/Built.astro";
     <Contact />
     <About />
     <Experiences />
+    <Skillsets/>
     <Languages />
+    <Educations />
     <Built />
   </main>
 </Layout>
@@ -40,8 +45,9 @@ import Built from "~/components/Built.astro";
       "infos"
       "experiences"
       "about"
-      "languages"
       "skillsets"
+      "languages"
+      "educations"
       "built";
 
     grid-template-columns: auto;
@@ -106,8 +112,9 @@ import Built from "~/components/Built.astro";
       grid-template-areas:
         "header infos"
         "experiences about"
-        "experiences languages"
         "experiences skillsets"
+        "experiences languages"
+        "experiences educations"
         "built built";
 
       grid-template-columns: auto minmax(min-content, 28%);
