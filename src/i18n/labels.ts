@@ -36,7 +36,7 @@ export const labels = {
 
   linux: "Linux",
   docker: "Docker",
-  aws: "AWS/CW",
+  aws: "AWS",
   mysql: "Mysql, PostgreSQL",
 
   english: "English",

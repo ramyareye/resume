@@ -1,15 +1,16 @@
 ---
-import { t } from "~/i18n/labels";
+import { cap, t } from '~/i18n/labels';
 
 import Section from "~/components/Section.astro";
 
-import Link from '~/components/Link.astro'
+// import Link from '~/components/Link.astro'
 
-function toPercent(rate: number) {
-  return `${(rate * 100).toFixed(2)}%`
-}
+// function toPercent(rate: number) {
+//   return `${(rate * 100).toFixed(2)}%`
+// }
 
 const projects= {
+    'https://unite.un.org/': 'UNite (Web)',
     'https://apps.apple.com/us/app/wonderfruit/id1065512368?ls=1': 'Wonderfruit (iOS)',
     'https://play.google.com/store/apps/details?id=com.scratchfirst.wonderfruitapp': 'Wonderfruit (Android)',
     'https://www.npmjs.com/package/@amityco/ts-sdk': 'Amity TS SDK',
@@ -18,7 +19,6 @@ const projects= {
     'https://play.google.com/store/apps/details?id=com.techera.upera': 'Upera (Android)',
     'https://anardoni.com/ios/app/-GKmEN52': 'Ovisit (iOS)',
     'https://play.google.com/store/apps/details?id=com.ovisitapp': 'Ovisit (Android)',
-    'https://linksee.me/': 'Linksee',
     'https://headstart.work/': 'Headstart',
     'https://komodaa.com/': 'Komodaa',
     'https://houseno4.org/': 'House no4',
@@ -30,11 +30,20 @@ const projects= {
 const skillsets = [
   'HTML/CSS, JavaScript, TypeScript',
   'React, React Native, Node, Express',
-  'Next.js, Expo, Vue.js, PHP, Laravel',
+  'Next.js, Expo, PHP, Laravel, Go',
   'CI/CD, Github Actions, Monorepos',
-  'Lerna, Turbo, Linux, Docker, Git',
-  'AWS/CW, Mysql, PGSQL, Jest, SDLC'
+  'AWS, Azure, Database, Jest',
+  'DevOps, Linux, Docker, Git, Nginx',
+  'Planning, Team Management, Agile'
 ];
+
+
+const educations = {
+  it: {
+    title: 'Software Engineering',
+    degree: 'Associate degree',
+  },
+}
 
 ---
 
@@ -58,6 +67,17 @@ const skillsets = [
               </a>
             </dt>
         ))}
+    </dl>
+  </section>
+  <section class="skillset educations">
+    <h3>{t('educations')}</h3>
+    <dl>
+      {Object.entries(educations).map(([text, { title, degree }]) => (
+        <>
+          <dt title={cap(title)}>{t(title)}</dt>
+          <dt>{degree}</dt>
+        </>
+      ))}
     </dl>
   </section>
 </Section>
@@ -144,4 +164,56 @@ const skillsets = [
       border: none;
     }
   }
+
+  .educations {
+    grid-area: educations;
+    padding: 2.5em 1.5em;
+    border-top: 1px solid var(--border);
+  }
+
+  .educations h2 {
+    display: block;
+    margin: 0 0 .5em;
+    color: var(--primary);
+    font-family: 'Raleway', sans-serif;
+    font-size: 1em;
+  }
+
+
+  .educations dl {
+    display: grid;
+    grid-template-columns: auto min-content;
+    grid-gap: calc(.25em/.9) 0;
+    align-items: center;
+    color: var(--secondary);
+    font-family: 'Arapey', sans-serif;
+    font-size: .9em;
+  }
+
+  .educations dt {
+    display: flex;
+    margin-right: .25em;
+    white-space: nowrap;
+  }
+
+  .educations dt:after {
+    flex: 1 1 0%;
+    content: '........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................';
+    width: 1px;
+    padding: 0 .25em;
+    overflow: hidden;
+    color: var(--light);
+  }
+
+  .educations dd {
+    white-space: nowrap;
+  }
+
+  .educations dd:before,
+  .educations dd:after,
+  .educations dd:before,
+  .educations dd:after {
+    display: none;
+  }
+
 </style>
