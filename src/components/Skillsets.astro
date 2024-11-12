@@ -28,13 +28,13 @@ const projects= {
 };
 
 const skillsets = [
-  'HTML/CSS, JavaScript, TypeScript',
-  'React, React Native, Node, Express',
-  'Next.js, Expo, Astro, Laravel, Go',
+  'JavaScript, TypeScript',
+  'React, React Native, Expo',
+  'Accessibility, XCode, Gradle, Fastlane',
+  'Next.js, Astro, Go, PHP, Node.js',
   'CI/CD, Github Actions, Monorepos',
   'AWS, Azure, Database, Jest',
   'DevOps, Linux, Docker, Git, Nginx',
-  'Accessibility, XCode, Gradle, Fastlane',
   'Planning, Team Management, Agile'
 ];
 
@@ -70,13 +70,12 @@ const educations = {
         ))}
     </dl>
   </section>
-  <section class="skillset educations">
+  <section class="skillset projects">
     <h3>{t('educations')}</h3>
     <dl>
       {Object.entries(educations).map(([text, { title, degree }]) => (
         <>
-          <dt title={cap(title)}>{t(title)}</dt>
-          <dt>{degree}</dt>
+          <dt title={cap(title)}>{t(title)} </dt> <small class="margin-left: 5px;">({degree})</small>
         </>
       ))}
     </dl>
