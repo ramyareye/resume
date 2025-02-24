@@ -6,7 +6,7 @@ import Section from '~/components/Section.astro'
 const educations = {
   it: {
     title: 'Software Engineering',
-    degree: 'Associate degree',
+    degree: '', // Associate degree
   },
 }
 ---
@@ -16,7 +16,7 @@ const educations = {
     {Object.entries(educations).map(([text, { title, degree }]) => (
       <>
         <dt title={cap(title)}>{t(title)}</dt>
-        <dd>{degree}</dd>
+        {/* <dd>{degree}</dd> */}
       </>
     ))}
   </dl>

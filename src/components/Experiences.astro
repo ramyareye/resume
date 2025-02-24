@@ -1,153 +1,182 @@
 ---
-import { t } from "~/i18n/labels";
+import { t } from '~/i18n/labels'
+import { micromark } from "micromark";
 
-import Section from "~/components/Section.astro";
-import Experience from "~/components/Experience.astro";
+import Section from '~/components/Section.astro'
+import Experience from '~/components/Experience.astro'
 
 const experiences = [
-  {
-    title: "React/React Native Developer",
-    company: "UN.org",
-    website: "https://un.org/en/",
-    from: new Date("2023-04-20"),
-    location: "Bangkok, Thailand",
+	{
+		title: 'Senior Frontend Engineer',
+		company: 'United Nations',
+		website: 'https://un.org/en/',
+		from: new Date('2023-04-20'),
+		location: 'Remote, Thailand',
 
-    summary: 'Led the development and optimization of React-based systems at the UN, creating a scalable architecture. Built a solid codebase utilizing Tailwind CSS, React Query, React Table, Headless UI, and a custom design system. Streamlined development practices and enhanced system performance for a high-impact, accessible user experience.',
-    highlight: "Key achievements:",
-    challenges: [
-      "Improved code quality, maintainability and reduced complexity.",
-      "accessibility compliance by meeting WCAG standards, making the product usable for a broader audience.",
-    ],
-  },
-  {
-    title: "React/React Native Engineer",
-    company: "Wonderfruit.co",
-    website: "https://wonderfruit.co/",
-    from: new Date("2022-10-01"),
-    location: "Bangkok, Thailand",
+		summary: '',
+		// summary: 'Led the development and optimization of React-based systems at the UN, creating a scalable architecture. Built a solid codebase utilizing Tailwind CSS, React Query, React Table, Headless UI, and a custom design system. Streamlined development practices and enhanced system performance for a high-impact, accessible user experience.',
+		highlight: 'Key achievements:',
+		challenges: [
+			"Optimized UI performance by replacing Material UI with __Tailwind CSS__ + __Headless UI__, reducing __bundle size by 40%__ and __load time by 25%__.",
+			"Enhanced system by leveraging __TypeScript__, __React Query__, __React Table__",
+			"Architected and improved infrastructure, implementing __Azure-hosted services__, containerized deployments with __Docker__, reducing operational overhead.",
+			"Built automated __CI/CD pipelines__ with __Azure Pipelines__, reducing deployment time by __50%__ and minimizing manual intervention.",
+			// "Implemented __testing strategy__, improving unit and integration test coverage",
+			"Ensured __accessibility__ compliance with __WCAG standards__ for a broader audience."
+		]
+	},
+	{
+		title: 'Senior Fullstack Engineer',
+		company: 'Wonderfruit.co',
+		website: 'https://wonderfruit.co/',
+		from: new Date('2022-10-01'),
+		location: 'Bangkok, Thailand',
 
-    summary: `Joined as the first in-house engineer, maintaining and optimizing the company's React Native application. Assisted with AWS lambdas and WordPress updates. Responsibilities included planning, architecture, and implementation.`,
-    highlight: "Main contributions:",
-    challenges: [
-      "Designed, developed, and maintained cross-platform mobile applications",
-      "Integrated React Native Maps for iOS/Android",
-      "Focused on stability, accessibility, using AWS, Firebase, CodePush, Expo",
-      "Reduced technical debt by implementing reusable components, decreasing development time",
-      "Diagnosed and fixed bugs and performance bottlenecks",
-    ],
-  },
-  {
-    title: "Web/Mobile Engineer",
-    company: "Amity.co",
-    website: "https://amity.co/",
-    from: new Date("2021-07-01"),
-    to: new Date("2022-10-15"),
-    location: "Bangkok, Thailand",
+		summary: '',
+		// summary: `Joined as the first in-house engineer, maintaining and optimizing the company's React Native application. Assisted with AWS lambdas and WordPress updates. Responsibilities included planning, architecture, and implementation.`,
+		highlight: 'Key achievements:',
+		challenges: [
+			"__First in-house engineer__, responsible for maintaining and optimizing the __React Native__ application and __AWS Lambdas__, ensuring uptime and scalability.",
+			"Designed __system architecture__, improving API response times by __35%__ and reducing database load with optimized queries.",
+			"Reduced server costs and improved API response time by migrating to a serverless __AWS__ architecture with __Lambda__, __S3__, __CloudFront__, and __DynamoDB__.",
+			"Built and maintained __CI/CD pipelines__ using __GitHub Actions__ & __AWS CodePipeline__",
+			"Optimized memory usage, reducing peak consumption by 40% and improving overall efficiency, cutting load times by 25%.",
+			"Researched and implemented __local-first architecture__, enhancing offline resilience",
+			"Improved __system reliability__ by implementing  __Sentry__ based monitoring and alerting.",
+		]
+	},
+	{
+		title: 'Web/Mobile Engineer',
+		company: 'social+',
+		website: 'https://www.social.plus/',
+		from: new Date('2021-07-01'),
+		to: new Date('2022-10-15'),
+		location: 'Bangkok, Thailand',
 
-    summary: `Led the development of TypeScript SDK, a multi-environment wrapper for the company API. Implemented features, conducted research, POCs, modifications and reviewing.`,
-    highlight: "Key challenges:",
-    challenges: [
-      "Developed fundamental features like Caching, Reactivity and Real-Time Events",
-      "Synchronized platform features across web, native mobile, and React Native",
-      "Conducted interviews and onboarded new team members",
-      "Designed and implemented unit tests using Jest",
-    ],
-  },
-  {
-    title: "Fullstack Engineer",
-    company: "Peste",
-    website: "",
-    from: new Date("2020-04-01"),
-    to: new Date("2021-03-01"),
-    location: "Amsterdam, Netherlands - Remote",
+		summary: '',
+		// summary: `Led the development of TypeScript SDK, a multi-environment wrapper for the company API. Implemented features, conducted research, POCs, modifications and reviewing.`,
+		highlight: 'Key achievements:',
+		challenges: [
+			"Developed a __TypeScript SDK__, reducing integration effort for client teams and improving API response consistency",
+			"Implemented fundamental SDK features like __caching__, __reactivity__, and __real-time event handling__, improving API performance",
+			"__Synchronized platform features__ across web, mobile, and React Native",
+			"Implemented unit & integration tests with __Jest__, improving test coverage",
+			"__Conducted technical interviews__ and __onboarded new engineers__, improving team efficiency and knowledge sharing."		]
+	},
+	{
+		title: 'Fullstack Engineer',
+		company: 'Peste',
+		website: '',
+		from: new Date('2020-04-01'),
+		to: new Date('2021-03-01'),
+		location: 'Amsterdam, Netherlands - Remote',
 
-    summary: `Consulted on architecture design for full-stack and frontend web platforms, provided reliable time and budget estimations, and delivered products with a 4-person team.`,
-    highlight: `Core activities: Built stable and maintainable codebases using TypeScript, Node, PHP. Assisted backend team with database and application structure design. Developed front-end for 5+ web apps using React.js, Next.js, Redux, GraphQL, and Draft.js.`,
-  },
-  {
-    title: "Fullstack Engineer",
-    company: "Upera.tv",
-    website: "https://upera.tv/",
-    from: new Date("2014-01-01"),
-    to: new Date("2019-06-28"),
-    location: "Tehran, Iran",
+		summary: '',
+		// summary: `Consulted on architecture design for full-stack and frontend web platforms, provided reliable time and budget estimations, and delivered products with a 4-person team.`,
+		// highlight: `Core activities: Built stable and maintainable codebases using TypeScript, Node, PHP. Assisted backend team with database and application structure design. Developed front-end for 5+ web apps using React.js, Next.js, Redux, GraphQL, and Draft.js.`,
+		highlight: 'Key achievements:',
+		challenges: [
+			"__Architected and developed__ fullstack platforms, ensuring __high availability__ and __low-latency performance__.",
+			"Optimized infrastructure and reduced API response times by using __Redis__",
+			"Implemented __CI/CD pipelines__, reducing deployment friction",
+			"Integrated engineering practices, improving maintainability and developer efficiency"
+		]
+	},
+	{
+		title: 'Fullstack Engineer',
+		company: 'Upera.tv',
+		website: 'https://upera.tv/',
+		from: new Date('2014-01-01'),
+		to: new Date('2019-06-28'),
+		location: 'Tehran, Iran',
 
-    summary: `Developed core software with Laravel and led a team of 5 programmers to build user interfaces. Utilized Nuxt, React Native, React and TypeScript. Focused on performance and efficiency for millions of users.`,
-    highlight: `Notable projects: Website development with Vue and Nuxt, TV application with Java, Mobile application with React Native and TypeScript, React dashboard with TypeScript, TailwindCSS, and React Query.`,
-  },
-  // {
-  //   title: "Web Engineer",
-  //   company: "Soft-Max.com",
-  //   website: "https://soft-max.com/",
-  //   from: new Date("2013-08-01"),
-  //   to: new Date("2014-02-01"),
-  //   location: "Erbil, Iraq",
+		summary: '',
+		// summary: `Developed core software with Laravel and led a team of 5 programmers to build user interfaces. Utilized Nuxt, React Native, React and TypeScript. Focused on performance and efficiency for millions of users.`,
+		// highlight: `Notable projects: Website development with Vue and Nuxt, TV application with Java, Mobile application with React Native and TypeScript, React dashboard with TypeScript, TailwindCSS, and React Query.`,
+		highlight: 'Key achievements:',
+		challenges: [
+			"__Led a team__ of 5 developers to build a __Laravel__ based video streaming platform handling 10k daily users.",
+			"Optimized __caching__ and __API optimizations__ improving request latency.",
+			"Led development of __cross-platform apps__, building with React, Vue and React Native",
+			"Implemented infrastructure using __Docker__, and __CI/CD pipelines__, reducing operational costs and increasing deployment efficiency.",
+			"Applied __modular and reusable design principles__, reducing development time"		]
+	}
+	// {
+	//   title: "Web Engineer",
+	//   company: "Soft-Max.com",
+	//   website: "https://soft-max.com/",
+	//   from: new Date("2013-08-01"),
+	//   to: new Date("2014-02-01"),
+	//   location: "Erbil, Iraq",
 
-  //   summary: "Built UI, applied new designs, and researched adoption plans for upcoming techs.",
-  // },
-  {
-    title: "Web Engineer",
-    company: "Varzesh3.com",
-    website: "https://varzesh3.com/",
-    from: new Date("2012-08-01"),
-    to: new Date("2013-02-01"),
-    location: "Tehran, Iran",
+	//   summary: "Built UI, applied new designs, and researched adoption plans for upcoming techs.",
+	// },
+	// {
+	//   title: "Web Engineer",
+	//   company: "Varzesh3.com",
+	//   website: "https://varzesh3.com/",
+	//   from: new Date("2012-08-01"),
+	//   to: new Date("2013-02-01"),
+	//   location: "Tehran, Iran",
 
-    summary: `Designed and managed the "national online games tournament" platform. Initialized and led a team for the company's e-commerce project.`,
-  },
-];
+	//   summary: '',
+	//   // summary: `Designed and managed the "national online games tournament" platform. Initialized and led a team for the company's e-commerce project.`,
+	//   highlight: "Main contributions:",
+	//   challenges: [
+
+	//   ]
+	// },
+]
 ---
 
-<Section class="experiences" title={t("experiences")}>
-  <ol>
-    {
-      experiences.map((experience) => (
-        <li>
-          <Experience {...experience} />
-        </li>
-      ))
-    }
-  </ol>
+<Section class="experiences" title={t('experiences')}>
+	<ol>
+		{
+			experiences.map((experience) => (
+				<li>
+					<Experience {...experience} />
+				</li>
+			))
+		}
+	</ol>
 </Section>
 
 <script>
-  const VISIBLE = "visible";
-  const experiences = [
-    ...document.querySelectorAll(".experiences .experience"),
-  ];
+	const VISIBLE = 'visible'
+	const experiences = [...document.querySelectorAll('.experiences .experience')]
 
-  function onClick(evt: Event) {
-    const { classList } = evt.currentTarget as HTMLElement;
-    const hadVisible = classList.contains(VISIBLE);
+	function onClick(evt: Event) {
+		const { classList } = evt.currentTarget as HTMLElement
+		const hadVisible = classList.contains(VISIBLE)
 
-    experiences.forEach((experience) => experience.classList.remove(VISIBLE));
-    if (!hadVisible) classList.add(VISIBLE);
-  }
+		experiences.forEach((experience) => experience.classList.remove(VISIBLE))
+		if (!hadVisible) classList.add(VISIBLE)
+	}
 
-  // addListener
-  experiences.forEach((experience) => {
-    experience.addEventListener("click", onClick);
-  });
+	// addListener
+	experiences.forEach((experience) => {
+		experience.addEventListener('click', onClick)
+	})
 </script>
 
 <style is:global>
-  .experiences {
-    counter-reset: experiences;
-    grid-area: experiences;
-  }
+	.experiences {
+		counter-reset: experiences;
+		grid-area: experiences;
+	}
 
-  .experiences ol {
-    padding: 0;
-    list-style: none;
-  }
+	.experiences ol {
+		padding: 0;
+		list-style: none;
+	}
 
-  @media screen and (min-width: 768px), print {
-    .experiences li:first-child .experience {
-      padding-top: 0;
-      border-top: none;
-    }
-    .experiences li:last-child .experience {
-      border-bottom: none;
-    }
-  }
+	@media screen and (min-width: 768px), print {
+		.experiences li:first-child .experience {
+			padding-top: 0;
+			border-top: none;
+		}
+		.experiences li:last-child .experience {
+			border-bottom: none;
+		}
+	}
 </style>

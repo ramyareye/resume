@@ -34,11 +34,10 @@ const [city] = location.split(",");
   <hgroup>
     <h3>{title}</h3>
     <h5>
-      <a href={website} target="_blank" rel="company">{company}</a> (<a
-        href={`https://www.google.com/maps/search/${city}`}
+      <a href={website} target="_blank" rel="company"><strong>{company}</strong> (<small>{location}</small>)</a> 
+        <!-- href={`https://www.google.com/maps/search/${city}`}
         target="_blank"
-        rel="location">{location}</a
-      >)
+        rel="location" -->
     </h5>
   </hgroup>
 
@@ -67,7 +66,7 @@ const [city] = location.split(",");
             {challenges && (
               <ul>
                 {challenges.map((c: string) => (
-                  <li>{c}</li>
+                  <li is:raw set:html={micromark(c)} />
                 ))}
               </ul>
             )}

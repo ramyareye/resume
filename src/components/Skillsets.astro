@@ -28,21 +28,30 @@ const projects= {
 };
 
 const skillsets = [
-  'JavaScript, TypeScript',
-  'React, React Native, Expo',
-  'Accessibility, XCode, Gradle, Fastlane',
-  'Next.js, Astro, Go, PHP, Node.js',
-  'CI/CD, Github Actions, Monorepos',
-  'AWS, Azure, Database, Jest',
-  'DevOps, Linux, Docker, Git, Nginx',
-  'Planning, Team Management, Agile'
+  '<strong>Frontend Development</strong>',
+  'JavaScript, TS, React, React Native',
+  'Next.js, Astro, Expo, Accessibility',
+  '<strong>Backend & Sys Development</strong>',
+  'Go, PHP, Node.js',
+  'DBMS (PGSQL, MySQL, NoSQL)',
+  'API Design, Auth (OAuth, JWT)',
+  '<strong>Infrastructure & DevOps</strong>',
+  'CI/CD (GitHub Actions, Fastlane)',
+  'Docker, Linux, Nginx, AWS, Azure',
+  'Microservices, Distributed Systems',
+  '<strong>Tools & Software Engineering</strong>',
+  'Git, XCode, Gradle',
+  'Jest, Unit & Integration Testing',
+  'Agile, Team Management, Planning'
 ];
+
+
 
 
 const educations = {
   it: {
     title: 'Software Engineering',
-    degree: 'Associate degree',
+    degree: 'Mohajer Technical College of Isfahan', // Associate degree
   },
 }
 
@@ -53,7 +62,7 @@ const educations = {
     <h3>{t('skills')}</h3>
       <dl>
         {skillsets.map((skill) => (
-          <dt>{skill}</dt>
+          <dt set:html={skill}/>
         ))}
       </dl>
   </section>
@@ -75,7 +84,8 @@ const educations = {
     <dl>
       {Object.entries(educations).map(([text, { title, degree }]) => (
         <>
-          <dt title={cap(title)}>{t(title)} </dt> <small class="margin-left: 5px;">({degree})</small>
+          <dt title={cap(title)}>{t(title)} </dt> 
+          <small class="margin-left: 5px;">({degree})</small>
         </>
       ))}
     </dl>
