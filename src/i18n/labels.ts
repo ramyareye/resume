@@ -3,7 +3,7 @@ export const labels = {
   experiences: "Experiences",
   about: "tldr;",
   skills: "Skills",
-  projects: "Projects",
+  projects: "Projects 🔗",
   educations: "Education",
   opensource: "Open Source Projects",
 
